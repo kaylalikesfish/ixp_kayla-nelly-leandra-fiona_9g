@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physical Quantities and Its Units</title>
+
+  <style>
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: #cfeeff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .window {
+      width: 880px;
+      height: 500px;
+      background: linear-gradient(#e9f8ff, #cdefff);
+      border-radius: 20px;
+      border: 3px solid #0b2545;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: #0b2545;
+      color: white;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .pill {
+      background: linear-gradient(#d9f3ff, #b6e4ff);
+      color: #0b2545;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pill:hover { transform: scale(1.06); }
+
+    .pill.active {
+      box-shadow: 0 0 0 2px #0b2545 inset, 0 6px 14px rgba(0,0,0,0.3);
+    }
+
+    .body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .chat {
+      background: #e6f7ff;
+      border-radius: 16px;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      opacity: 1;
+      transition: opacity 0.35s ease;
+    }
+
+    .chat.fade { opacity: 0; }
+
+ .bubble {
+  background: #f7fdff;
+  border: 2px solid #0b2545;
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 8px;
+
+  max-height: 150px;    
+  overflow-y: auto;     
+  line-height: 1.4;
+}
+
+    .side {
+      background: #e6f7ff;
+      border-radius: 16px;
+      padding: 5px;
+    }
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px;
+}
+
+.post {
+background: #cdefff;
+  border: 2px solid #0b2545;
+  border-radius: 12px;
+  height: 200px; 
+  overflow: hidden;
+}
+
+.post img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.bottombar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+    .btn {
+      background: linear-gradient(#d9f3ff, #b6e4ff);
+      border: 2px solid #0b2545;
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn a {
+  text-decoration: none;
+  color: inherit;   /* keeps same color as button */
+}
+  </style>
+</head>
+<body>
+
+<div class="window">
+  <div class="topbar">
+    <div class="pill">Physical Quantities and Its Units</div>
+    <div class="pill page-btn active" data-page="1">001</div>
+    <div class="pill page-btn" data-page="2">002</div>
+  </div>
+
+  <div class="body">
+    <div class="chat" id="chat"></div>
+
+<div class="side">
+  <div class="posts">
+    <div class="post"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWH-uDvEZjCbsci8J6H1kIShxTKflUROXMg&s" alt=""></div>
+    <div class="post"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4yZmkvG98FBy7wd1gYEP9uDhbq5e03pokQQ&s" alt=""></div>
+    <div class="post"><img src="https://i0.wp.com/boarding-school.in/wp-content/uploads/2023/11/Class-11-Conversion-from-one-measure-to-another.png?fit=450%2C337&ssl=1" alt=""></div>
+    <div class="post"><img src="https://img.freepik.com/free-vector/physics-classroom-equipment_3446-34.jpg?semt=ais_hybrid&w=740&q=80" alt=""></div>
+  </div>
+</div>
+
+</div> <!-- ✅ CLOSE .body HERE -->
+
+<div class="bottombar">
+  <button class="btn"><a href="index.html">Home</a></button>
+  <button class="btn"><a href="grade8.html">Grade 8</a></button>
+  <button class="btn"><a href="grade91.html">Grade 9 Sem 1</a></button>
+  <button class="btn"><a href="grade92.html">Grade 9 Sem 2</a></button>
+  <button class="btn"><a href="source.html">Resources</a></button>
+  <button class="btn"><a href="https://create.kahoot.it/share/measurement-physics-grade-8-material/9471ca5d-4f1e-49c6-94ef-9ceff79f6af9">Kahoot!</a></button>
+</div>
+</div>
+
+<script>
+const pages = {
+  1: [
+    {
+      title: '1.1 Physical Quantities and Its Unit',
+      text: `Physical quantities are measurable properties of matter, defined by a numerical magnitude and unit (for example, 5 centimeters).
+
+Physical quantities are divided into two; base and derived quantities. There are 7 base quantities, which are:
+<ol>
+  <li>Length (m)</li>
+  <li>Mass (kg)</li>
+  <li>Time (s)</li>
+  <li>Electric current (A)</li>
+  <li>Temperature (K)</li>
+  <li>Amount of substance (mol)</li>
+  <li>Luminous intensity (cd)</li>
+</ol>
+
+Derived quantities are formed by combining base quantities, such as speed (m/s), force (N), and density (kg/m³). Using standard units ensures consistent and easily understood measurements.`
+    },
+    {
+      title: '1.2 Standard Form and Prefix',
+      text: `Standard form and prefix expresses an incredibly large or small amount of numbers as A × 10ⁿ to simplify calculations.
+
+SI prefixes also replace powers of 10 to denote multiples or sub-multiples of units, which allows for more concise and readable results of calculations.
+
+Prefixes such as kilo (10³), centi (10⁻²), milli (10⁻³), and micro (10⁻⁶) make values easier to read and write.
+For example, 0.001 m can be written as 1 mm.`
+    }
+  ],
+  2: [
+    {
+      title: '1.3 Unit Conversion',
+      text: `Multiply or divide using conversion factors.`
+    },
+    {
+      title: '1.4 Measuring Using Tools',
+      text: `Uses rulers, balances, thermometers, and more.`
+    }
+    ],
+2: [
+  {
+    title: '1.3 Convert from One Unit to Another Unit',
+    text: `Converting one unit to another requires using conversion factors or ratios. 
+Multiplying is required when converting from a larger unit to a smaller one, and dividing is used when converting from a smaller unit to a larger one.
+
+Correct conversion of units is essential when doing experiments to ensure accuracy, especially during calculations.`
+  },
+  {
+    title: '1.4 Measuring Using Tools',
+    text: `Measuring tools are tools used to quantify physical properties like length, volume, mass, and temperature. 
+It ensures accuracy in identifying something, and common measuring tools include:
+
+<ol>
+  <li>Ruler / measuring tape (measures length)</li>
+  <li>Vernier caliper (measures small lengths with high precision)</li>
+  <li>Balance (measures mass)</li>
+  <li>Measuring cylinder (measures volume of liquid)</li>
+  <li>Thermometer (measures temperature)</li>
+  <li>Stopwatch (measures time)</li>
+</ol>`
+  }
+]
+
+  };
+
+  let currentPage = 1;
+  const chat = document.getElementById('chat');
+  const buttons = document.querySelectorAll('.page-btn');
+
+  function renderPage(page) {
+    chat.innerHTML = '';
+    pages[page].forEach(item => {
+      chat.innerHTML += `<div class="bubble"><strong>${item.title}</strong><br>${item.text}</div>`;
+    });
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = Number(btn.dataset.page);
+      if (page === currentPage) return;
+
+      chat.classList.add('fade');
+
+      setTimeout(() => {
+        currentPage = page;
+        renderPage(page);
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        chat.classList.remove('fade');
+      }, 350);
+    });
+  });
+
+  renderPage(1);
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

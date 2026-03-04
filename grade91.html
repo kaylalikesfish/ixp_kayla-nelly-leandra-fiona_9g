@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Static Electricity</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  background: repeating-linear-gradient(
+    45deg,
+    #e0efff,
+    #e0efff 20px,
+    #cbdfed 20px,
+    #cbdfed 40px
+  );
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+.browser,
+.card,
+.player {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.container{
+  width:750px;
+}
+
+.browser{
+  background:linear-gradient(#e3e3e3,#ffffff);
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:20px;
+}
+
+.url{
+  flex:1;
+  background:white;
+  border:2px solid #aaa;
+  border-radius:10px;
+  padding:6px 10px;
+}
+
+.search,
+.icon-btn{
+  background:#dcdcdc;
+  border:2px solid #aaa;
+  border-radius:8px;
+  padding:6px 12px;
+  transition: background 0.3s ease;
+}
+
+.search1{
+  background: linear-gradient(#3482d1,#a8d4f0);
+  border:2px solid #353876;
+  border-radius:8px;
+  padding:6px 12px;
+  margin-top: 5px;
+  transition: background 0.3s ease;
+}
+
+.search:hover { background:#b6b6b6; }
+
+.search1:hover { background: linear-gradient(#2966a4,#7fa1b6); }
+
+.icon-btn{
+  width:35px;
+  height:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  background:linear-gradient(#e3e3e3,#ffffff);
+  border:2px solid #aaa;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:20px;
+}
+
+.top-row{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.left-side{
+  width:180px;
+}
+
+.profile{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  border:2px solid #aaa;
+}
+
+.profile2{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-top:5px;
+}
+
+.status{
+  margin-top:10px;
+  background:#f7f7f7;
+  border:2px solid #aaa;
+  border-radius:10px;
+  padding:10px;
+  width:100%;
+}
+
+.chat-content{
+  flex:1;
+  transition: opacity 0.3s ease;
+}
+
+.username{
+  margin-bottom:8px;
+}
+
+.bubble{
+  background:white;
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.bubblevideo{
+  background:white;
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.santa-box{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+  height:160px;         
+  overflow-y:auto;
+  padding-right:5px;
+}
+
+.santa-box::-webkit-scrollbar{
+  width:6px;
+  height: 5px;
+}
+
+.santa-box::-webkit-scrollbar-thumb{
+  background:#707171;
+  border-radius:20px;
+}
+
+.santa-text{
+  flex:1;
+}
+
+.school-img{
+  width:110px;
+  border-radius:10px;
+  border:2px solid #9c9c9c;
+  object-fit:contain;
+}
+
+.player{
+  background:linear-gradient(#dfdfdf,#ffffff);
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.play{
+  background:#c1dff3;
+  border:2px solid #aaa;
+  border-radius:8px;
+  padding:5px 10px;
+  gap: 2px;
+  transition: background 0.3s ease;
+}
+
+.play:hover { background:#a8d4f0; }
+
+.bar{
+  flex:1;
+  height:8px;
+  background:#ccc;
+  border-radius:5px;
+  position:relative;
+  gap: 2px;
+}
+
+.bar::after{
+  content:"";
+  position:absolute;
+  width:60%;
+  height:100%;
+  background:#999;
+  border-radius:5px;
+}
+
+.grades{
+  display:flex;
+  gap:3px;
+  margin-top:10px;
+}
+
+.grade-item{
+  text-align:center;
+}
+
+.grade-img{
+  width:120px;
+  border-radius:10px;
+  border:2px solid #aaa;
+  display:block;
+  transition: transform 0.3s ease;
+}
+
+.grade-img:hover{
+  transform:scale(1.06);
+}
+
+.search a{
+  text-decoration:none;
+  color:inherit;
+  gap: 2px;
+}
+
+.search1 a{
+  text-decoration:none;
+  color:white;
+  gap: 2px;
+}
+
+
+.video-wrapper {
+  width: 65%;
+  padding-bottom: 36.56%;
+  padding-left: -10px;
+}
+
+.side-image {
+  width: 35%;
+}
+
+.side-image img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #aaa;
+}
+
+.embed-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.embed-box {
+  position: relative;
+  width: 50%;
+  padding-bottom: 28.125%;
+  height: 0;
+}
+
+.embed-box iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #aaa;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="browser">
+    <div class="url">https://learnphys1cs.com</div>
+<div class="search page-btn active" data-page="home">home</div>
+<div class="search page-btn" data-page="friction">Friction</div>
+<div class="search page-btn" data-page="conduction">Conduction</div>
+<div class="search page-btn" data-page="induction">Induction</div>
+  </div>
+
+  <div class="card">
+    <div class="top-row">
+
+      <div class="left-side">
+        <img src="Post by @shinobi-bacon · 9 images.gif" class="profile">
+
+        <div class="status">
+          <b>@physicslearning</b> status: active<br><br>
+          Try our <span style="color: #3482d1;">Kahoot</span> !!<br>
+
+           <div class="search1">
+  <a href="https://create.kahoot.it/share/static-electricity-physics-grade-9-material/1f90ee7d-fe58-4b85-b062-8818f46b00df" target="_blank">
+        Kahoot!
+  </a>
+  </div>
+        </div>
+
+      </div>
+
+        <div class="chat-content" id="content">
+        <div class="username">@physicslearning - Today at 2:34pm</div>
+
+        <div class="bubble">
+          Hello everyone!, welcome to our page ꉂ(˵˃ ᗜ ˂˵) This page is made by : Leandra 9G/01, Fiona 9G/10, Kayla 9G/15, & Nelly 9G/23 !
+        </div>
+
+        <div class="bubble santa-box">
+          <div class="santa-text">
+            <span style="color:#3482d1;">Santa Laurensia</span> is a prestigious, progressive Roman Catholic school in Alam Sutera, Tangerang, founded in 1994, offering bilingual education from nursery to senior high. It focuses on holistic development—mind, body, and spirit with an international curriculum, modern facilities, and a strong emphasis on character building and Catholic values.
+          </div>
+          <img src="logoresmilaurensia-Copy (1).png" class="school-img">
+        </div>
+
+        <div class="bubble santa-box">
+          <div class="santa-text">
+<h2 style="color:#3482d1;">Ch 1. Static Electricity</h2>
+  <p>
+    <strong>Static electricity</strong> is the buildup of an electrical charge on the surface of an object. 
+    It is created when materials rub together (friction) or separate, causing an imbalance of positive and negative charges.
+  </p>
+  <p>
+    The buildup of electrical charge isn't just affected by rubbing two objects, or as we call it, 
+    <em>"Charging by friction"</em>. There are multiple ways to charge an object:
+  </p>
+  <ul style="margin-left:20px; margin-top:5px;">
+    <li>Charging by friction</li>
+    <li>Charging by induction</li>
+    <li>Charging by conduction</li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="player">
+    <div class="play">▶ Never Let Go - LNGSHOT</div>
+    <div class="bar"></div>
+    <div class="search">
+      <a href="index.html" class="grade-item">Home</a>
+    </div>
+
+       <div class="search">
+      <a href="grade7.html">Grade 7</a>
+    </div>
+
+           <div class="search">
+      <a href="grade8.html">Grade 8</a>
+    </div>
+
+           <div class="search">
+      <a href="grade92.html">Grade 9 Sem 2</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const pages = {
+
+  home: `
+  
+    <div class="username">@physicslearning - Today at 2:34pm</div>
+
+    <div class="bubble">
+      Hello everyone!, welcome to our page ꉂ(˵˃ ᗜ ˂˵)
+    </div>
+
+      <div class="bubble santa-box">
+          <div class="santa-text">
+<h2 style="color:#3482d1;">Ch 1. Static Electricity</h2>
+  <p>
+    <strong>Static electricity</strong> is the buildup of an electrical charge on the surface of an object. 
+    It is created when materials rub together (friction) or separate, causing an imbalance of positive and negative charges.
+  </p>
+  <p>
+    The buildup of electrical charge isn't just affected by rubbing two objects, or as we call it, 
+    <em>"Charging by friction"</em>. There are multiple ways to charge an object:
+  </p>
+  <ul style="margin-left:20px; margin-top:5px;">
+    <li>Charging by friction</li>
+    <li>Charging by induction</li>
+    <li>Charging by conduction</li>
+  </ul>
+</div>
+</div>
+
+    <div class="bubble">
+      Click the <span style="color:#3482d1">buttons above</span> to learn about static electricity subtopics!
+    </div>
+
+<div class="embed-row">
+
+  <div class="embed-box">
+    <iframe 
+      src="https://www.youtube.com/embed/ivzYC20bx1c?si=_ZSfJ4-wlHb3K1ng"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="embed-box">
+    <iframe
+      src="https://www.canva.com/design/DAHCYHsHZH0/Mvf52FDBFO6k4xfWy7B6sg/view?embed"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
+
+
+  
+</div>
+
+  </div>
+
+</div>
+  `,
+
+  friction: `
+    <div class="bubble">
+      <h2 style="color:#3482d1;">Charging by Friction</h2>
+      <p>
+Charging by friction (or triboelectric charging) is the process of generating static electricity by 
+rubbing two different materials together, causing electrons to transfer from one object to the other. One object becomes positively charged (loses electrons), 
+while the other becomes negatively charged (gains electrons), typical for insulators.
+      </p>
+    </div>
+
+     <div class="bubble">
+<p>
+    The procedure of rubbing a rubber balloon against your hair is quite easy to perform. When done, you will likely notice that the rubber balloon and your 
+    hair will attract each other. On a dry day, you might even be able to let go of the balloon and have it stick to your hair. This attraction between the two 
+    charged objects is evidence that the objects being charged are charged with an opposite type of charge (if they have the same charge, the balloon will repel your hair). 
+    So in this case, the balloon has a positive charge, and the hair has a negative charge.
+
+</p>
+
+        <div class="left-side">
+        <img style="width: 200%;" src="friction.png">
+        </div>
+
+    </div>
+
+  `,
+
+  conduction: `
+    <div class="bubble">
+      <h2 style="color:#3482d1;">Charging by Conduction</h2>
+      <p>
+Charging by conduction (also called charging by contact) occurs when a charged object touches a neutral object, allowing electric charges to move between them. 
+When a negatively charged object makes contact, its excess electrons spread out and move onto the neutral object, causing the neutral object to become negatively charged while the original object remains negative but with fewer electrons. 
+When a positively charged object touches a neutral object, electrons move from the neutral object to the positively charged one, leaving the neutral object positively charged. 
+In all cases, direct contact is required, which is what makes conduction different from charging by induction, where no contact occurs.
+      </p>
+
+        <div class="left-side">
+        <img style="width: 150%;" src="Conduction.gif">
+        </div>
+
+
+    </div>
+  `,
+
+  induction: `
+    <div class="bubble">
+      <h2 style="color:#3482d1;">Charging by Induction</h2>
+      <p>
+Induction charging is a method used to charge an object without actually touching the object to another charged object. The most common example of this method involves the induction charging of two metal spheres. 
+If a negatively charged rubber balloon (perhaps by rubbing it with animal fur) is brought near the spheres, electrons within this two-sphere system will be pushed to move away from the balloon. This is simply the principle that charges repel each other.
+So, what happened is, because negative repels negative, and the sphere is a conductor, it makes a migration of electrons from sphere A to sphere B and causes the two-sphere system to be polarized. 
+      </p>
+
+        <div class="left-side">
+        <img style="width: 230%;" src="Induction.gif">
+        </div>
+
+    </div>
+
+       <div class="bubble">
+      <h2 style="color:#3482d1;">Polarization</h2>
+      <p>
+Polarization is the process of separating the two charges (negative and positive). 
+For this case, it would mean that the sphere closest to the balloon would be positively charged, and the sphere farthest from the balloon would be negatively charged.
+      </p>
+
+    </div>
+
+  `
+};
+
+const buttons = document.querySelectorAll('.page-btn');
+const content = document.getElementById('content');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const page = button.dataset.page;
+
+    content.style.opacity = 0;
+
+    setTimeout(() => {
+      content.innerHTML = pages[page];
+      content.style.opacity = 1;
+    }, 200);
+
+    buttons.forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
+// Load default page
+content.innerHTML = pages.home;
+</script>
+
+</body>
+</html>

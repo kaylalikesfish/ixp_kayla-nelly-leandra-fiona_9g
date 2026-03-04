@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grade 8 Material</title>
+
+
+<style>
+
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+body {
+ margin: 0;
+ font-family: "Segoe UI", sans-serif;
+ background: linear-gradient(#dff1ff, #cfe7ff);
+}
+
+
+/* ===== Main Frame ===== */
+.card {
+ width: 900px;
+ background: #f7fbff;
+ border-radius: 20px;
+ border: 3px solid #bfe2ff;
+ padding: 18px;
+ box-shadow: 0 12px 30px rgba(120,170,220,0.3);
+ margin: 30px auto;
+}
+
+
+/* ===== Header ===== */
+.header {
+ background: linear-gradient(#eaf6ff, #d9ecff);
+ border-radius: 15px;
+ padding: 15px;
+ text-align: center;
+ color: #4a86c5;
+ margin-bottom: 15px;
+}
+
+
+.header h1 {
+ margin: 0;
+}
+
+
+.subheader {
+ font-size: 14px;
+ color: #6fa3d6;
+}
+
+
+/* ===== Content Grid ===== */
+.content {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 15px;
+}
+
+
+/* ===== Left Section ===== */
+.left {
+ background: #eef7ff;
+ padding: 15px;
+ border-radius: 15px;
+ border: 1px solid #cfe9ff;
+}
+
+
+.name {
+ font-size: 22px;
+ color: #4a86c5;
+ font-weight: bold;
+}
+
+
+.info-pill {
+ display: inline-block;
+ background: #dff0ff;
+ padding: 6px 12px;
+ border-radius: 20px;
+ margin: 8px 0;
+ color: #3c6ea8;
+}
+
+
+.left p {
+ color: #5f8fc2;
+ font-size: 14px;
+}
+
+
+/* ===== Links ===== */
+.links {
+ margin-top: 15px;
+ text-align: center;
+}
+
+
+.link-icons {
+ display: flex;
+ justify-content: space-around;
+ margin-top: 10px;
+}
+
+
+.icon {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ background: linear-gradient(#d8efff, #bfe2ff);
+}
+
+
+/* ===== Right Section ===== */
+.right {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+}
+
+
+.image-box {
+ height: 260px;
+ border-radius: 12px;
+ background: linear-gradient(#d8efff, #bfe2ff);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+
+
+.text-box {
+ background: #eef7ff;
+ padding: 12px;
+ border-radius: 12px;
+ border: 1px solid #cfe9ff;
+ color: #5f8fc2;
+}
+
+
+.notice {
+ background: #e1f2ff;
+ padding: 10px;
+ border-radius: 10px;
+ color: #3c6ea8;
+}
+
+
+/* ===== Bottom Navigation ===== */
+.bottom-nav {
+ display: flex;
+ gap: 10px;
+ margin-top: 18px;
+}
+
+
+.nav-btn {
+ flex: 1;
+ padding: 12px;
+ border-radius: 14px;
+ text-align: center;
+ background: linear-gradient(#8ec7ff, #6fb0f0);
+ color: white;
+ font-weight: 600;
+}
+
+.nav-btn a {
+  color: white;          /* keeps text white */
+  text-decoration: none; /* removes underline */
+  display: block;        /* makes whole button clickable */
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+ <!-- HEADER WITH GIF -->
+ <div class="header" align="center">
+   <img src="jellyfish.gif" width="100%" height="140"><br>
+   <h1>Grade 8 Material</h1>
+   <div class="subheader">Thermal Physics</div>
+ </div>
+
+
+ <div class="content">
+
+
+   <!-- LEFT -->
+   <div class="left">
+     <div class="name">Theory</div>
+     <div class="info-pill">Molecule concept and Brownian Movement</div>
+
+
+     <p>
+A molecule is a group of atoms bonded together that form the smallest identifiable unit into which a pure substance can be divided and still retain the composition and chemical properties of the substance.
+
+
+<br><br>
+
+
+Under the right conditions, all gases can turn into liquids or solids. This happens because molecules attract each other. These attractions are called intermolecular forces. Intermolecular forces act between molecules and affect physical properties like boiling point and melting point.
+
+
+<br><br>
+
+
+This is different from intramolecular forces, which act inside a molecule. Intramolecular forces are the bonds that hold atoms together to form a molecule.
+
+
+<br><br>
+
+
+Brownian motion is the random movement of tiny particles (such as pollen or dust) floating in a liquid or gas. This movement happens because the particles are constantly being hit by fast-moving molecules in the fluid. This phenomenon proves that molecules and atoms exist.
+
+
+<br><br>
+
+
+<b>Solid:</b> The molecules are arranged in regular, repeating patterns. They are packed firmly in place but can vibrate, though they won’t move as freely.
+
+
+<br>
+
+
+<b>Liquid:</b> The molecules flow easily around one another. They are kept together and can’t be apart because of the attractive forces between them. Liquid molecules follow the shape of the container.
+
+
+<br>
+
+
+<b>Gas:</b> The molecules can fly in all directions at great speeds. They are so far apart that the attractive forces between them are insignificant or don’t have any impact.
+     </p>
+
+
+     <div class="Images">
+  <b style="color:#4a86c5;">Images</b>
+
+  <div class="link-icons">
+
+    <a href="https://i0.wp.com/ibphysics.org/wp-content/uploads/2016/01/63065-004-07b69f7b.jpg?resize=600%2C380&ssl=1" target="_blank">
+      <img src="https://i0.wp.com/ibphysics.org/wp-content/uploads/2016/01/63065-004-07b69f7b.jpg?resize=600%2C380&ssl=1"
+           width="100" height="70">
+    </a>
+
+    <a href="https://cdn1.byjus.com/wp-content/uploads/2015/12/Brownian-Movement-.png" target="_blank">
+      <img src="https://cdn1.byjus.com/wp-content/uploads/2015/12/Brownian-Movement-.png"
+           width="100" height="70">
+    </a>
+
+    <a href="https://studymind.co.uk/wp-content/uploads/2022/05/1-141.png" target="_blank">
+      <img src="https://studymind.co.uk/wp-content/uploads/2022/05/1-141.png"
+           width="100" height="70">
+    </a>
+
+  </div>
+</div>
+   </div>
+
+
+   <!-- RIGHT -->
+   <div class="right">
+
+
+ <!-- PRESENTATION BUTTON -->
+ <div class="image-box" style="padding:0; overflow:hidden; height:auto; background:none;">
+
+
+ <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;
+  overflow: hidden; border-radius: 12px;">
+
+
+   <iframe loading="lazy"
+     style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+     src="https://www.canva.com/design/DAHCYIH7i58/HJD5EdFxDTEpoJosYOnloA/view?embed"
+     allowfullscreen>
+   </iframe>
+
+
+ </div>
+
+
+</div>
+
+
+
+     <!-- EMBEDDED YOUTUBE VIDEO -->
+<div class="text-box" style="padding:0; overflow:hidden;">
+  <iframe 
+    width="100%" 
+    height="200"
+    src="https://www.youtube.com/embed/cGRgstyQV9k"
+    style="border:none; border-radius:12px;"
+    allowfullscreen>
+  </iframe>
+</div>
+     
+<!-- KAHOOT BUTTON -->
+<div style="text-align:center; margin-top:12px;">
+  <a href="https://create.kahoot.it/share/thermal-physics-1-physics-grade-8-material/f8d33887-396a-4108-8df8-c168459f454f" 
+     target="_blank"
+     style="display:inline-block;
+            padding:12px 20px;
+            border-radius:14px;
+            background: linear-gradient(#ff4e9b, #ff2f7d);
+            color:white;
+            font-weight:600;
+            text-decoration:none;">
+    Play Kahoot Quiz 🎉
+  </a>
+</div>
+
+
+ <div class="notice">
+   Made by  Leandra 9G/01, Fiona 9G/10, Kayla 9G/15, & Nelly 9G/23 (˶ˆᗜˆ˵) 
+ </div>
+<!-- GIF SECTION -->
+<div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+
+  <img src="cat.gif" width="120" height="120">
+
+  <img src="silly cats.gif" width="120" height="120">
+
+  <img src="Nelly.png" width="120" height="120">
+
+</div>
+
+</div>
+
+
+ </div>
+
+
+ <div class="bottom-nav">
+   <div class="nav-btn"><a href="index.html">Home</a></div>
+   <div class="nav-btn"><a href="grade7.html">Grade 7</a></div>
+   <div class="nav-btn"><a href="grade91.html">Grade 9 Sem 1</a></div>
+   <div class="nav-btn"><a href="grade92.html">Grade 9 Sem 2</a></div>
+   <div class="nav-btn"><a href="source.html">Resources</a></div>
+ </div>
+
+
+</div>
+
+
+</body>
+</html>
