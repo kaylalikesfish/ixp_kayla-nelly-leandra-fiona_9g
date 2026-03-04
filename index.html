@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome!!!</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  background: repeating-linear-gradient(
+    45deg,
+    #e0efff,
+    #e0efff 20px,
+    #cbdfed 20px,
+    #cbdfed 40px
+  );
+
+  display:flex;
+  justify-content:center;   /* horizontal center */
+  align-items:center;       /* vertical center */
+  min-height:100vh;         /* full screen height */
+
+  padding:20px;             /* small spacing */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.browser,
+.card,
+.player {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.container{
+  width:750px;
+}
+
+
+.browser{
+  background:linear-gradient(#e3e3e3,#ffffff);
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap: 5px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:20px;
+}
+
+.url{
+  flex:1;
+  background:white;
+  border:2px solid #aaa;
+  border-radius:10px;
+  padding:6px 10px;
+}
+
+.search,
+.icon-btn{
+  background:#dcdcdc;
+  border:2px solid #aaa;
+  border-radius:8px;
+  padding:6px 12px;
+  transition: background 0.3s ease;
+}
+
+.search:hover {
+  background: #b6b6b6;
+}
+
+.icon-btn{
+  width:35px;
+  height:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  background:linear-gradient(#e3e3e3,#ffffff);
+  border:2px solid #aaa;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:20px;
+}
+
+.top-row{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.left-side{
+  width:180px;
+}
+
+.profile{
+  width:180px;
+  height:180px;
+  background: linear-gradient(#8ac5ff,#ffffff);
+  object-fit:cover;
+  border-radius:15px;
+  border:2px solid #aaa;
+}
+
+.profile2{
+  width:180px;
+  height:180px;
+  object-fit: cover;
+  border-radius:15px;
+}
+
+.status{
+  margin-top:10px;
+  background:#f7f7f7;
+  border:2px solid #aaa;
+  border-radius:10px;
+  padding:10px;
+  width:100%;
+}
+
+.chat-content{
+  flex:1;
+}
+
+.username{
+  margin-bottom:8px;
+}
+
+.bubble{
+  background:white;
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.santa-box{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.santa-text{
+  flex:1;
+}
+
+.school-img{
+  width:110px;
+  border-radius:10px;
+  border:2px solid #9c9c9c;
+  object-fit:contain;
+  background: linear-gradient(#8ac5ff,#ffffff);
+}
+
+.player{
+  background:linear-gradient(#dfdfdf,#ffffff);
+  border:2px solid #aaa;
+  border-radius:15px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.play{
+  background:#c1dff3;
+  border:2px solid #aaa;
+  border-radius:8px;
+  padding:6px 15px;
+  transition: background 0.3s ease;
+}
+
+.play:hover {
+  background: #a8d4f0;
+}
+
+.bar{
+  flex:1;
+  height:8px;
+  background:#ccc;
+  border-radius:5px;
+  position:relative;
+}
+
+.bar::after{
+  content:"";
+  position:absolute;
+  width:60%;
+  height:100%;
+  background:#999;
+  border-radius:5px;
+}
+
+.social{
+  display:flex;
+  gap:10px;
+}
+
+.circle{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:2px solid #aaa;
+  background:#f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.grades{
+  display:flex;
+  gap: 10px;
+  margin-top:10px;
+}
+
+.grade-item{
+  text-align:center;
+}
+
+.grade-img{
+  width:120px;
+  border-radius:10px;
+  border:2px solid #aaa;
+  display:block;
+  align-items: right;
+
+   transition: transform 0.3s ease;  /* 👈 THIS makes it smooth */
+}
+
+.grade-img:hover { transform: scale(1.06); }
+
+.search a {
+  text-decoration: none;
+  color: inherit;   /* keeps same color as button */
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="browser">
+    <div class="url">https://learnphys1cs.com</div>
+    <div class="search">Search</div>
+    <div class="icon-btn">🏠</div>
+    <div class="icon-btn">➡</div>
+    <div class="icon-btn">⏭</div>
+  </div>
+
+  <div class="card">
+    <div class="top-row">
+
+      <div class="left-side">
+        <img src="Post by @shinobi-bacon · 9 images.gif" class="profile">
+         
+        <div class="status">
+          <b>@physicslearning</b> status: active<br><br>
+          welcome to our site ~<br>
+          cr to physicslearning
+        </div>
+
+        <div class="left-side">
+          <img src="Post by @shinobi-bacon · 10 images.gif" class="profile2" style="border: #ffffff; margin-top: 5px;">
+        </div>
+
+      </div>
+
+      <div class="chat-content">
+        <div class="username">@physicslearning - Today at 2:34pm</div>
+
+        <div class="bubble">
+          Hello everyone!, welcome to our page ꉂ(˵˃ ᗜ ˂˵) This page is made by : Leandra 9G/01, Fiona 9G/10, Kayla 9G/15, & Nelly 9G/23 ! 
+        </div>
+
+        <div class="bubble santa-box">
+          <div class="santa-text">
+            <span style="color: #3482d1;">Santa Laurensia</span> is a prestigious, progressive Roman Catholic school in Alam Sutera, Tangerang, founded in 1994, offering bilingual education from nursery to senior high. It focuses on holistic development—mind, body, and spirit with an international curriculum, modern facilities, and a strong emphasis on character building and Catholic values.
+          </div>
+          <img src="logoresmilaurensia-Copy (1).png" class="school-img">
+        </div>
+
+ <div class="bubble">
+          <span style="color: #3482d1;"><strong>Come and check out our physics materials!</strong>
+          <p>These materials range from grade 7 to grade 9!</p></span>
+        </div>
+
+<div class="grades">
+
+  <div class="grade-item">
+    <a href="grade7.html">
+      <img src="IMG_8778.PNG" class="grade-img">
+    </a>
+    <p>Grade 7</p>
+  </div>
+
+  <div class="grade-item">
+    <a href="grade8.html">
+      <img src="IMG_8777.PNG" class="grade-img">
+    </a>
+    <p>Grade 8</p>
+  </div>
+
+  <div class="grade-item">
+    <a href="grade91.html">
+      <img src="IMG_8779.PNG" class="grade-img">
+    </a>
+    <p>Grade 9</p>
+  </div>
+
+  <div class="grade-item">
+    <a href="grade92.html">
+      <img src="IMG_8781.PNG" class="grade-img">
+    </a>
+    <p>Grade 9</p>
+  </div>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player">
+    <div class="play">▶ Never Let Go - LNGSHOT</div>
+    <div class="bar"></div>
+    <div class="social">
+        <div class="search">
+          <a href="source.html">Resources</a></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
